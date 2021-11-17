@@ -7,23 +7,13 @@ const intitialState = {
      errorMessage:''
  }
 function reducer(state = intitialState, action){
-console.log("working",action)
 switch (action.type) {
     case GET_DATA_REQUEST:
-    return {
-      loading:true
-    };
+    return Object.assign({}, state, { loading:true });
     case GET_DATA_SUCCESS:
-        console.log("payload",action)
-    return {
-        loading:false,
-        data:action.payload
-    };
+    return Object.assign({}, state, { loading:false,data:action.payload });
     case GET_DATA_FAILED:
-      return {
-        loading:false,
-        errorMessage:action.payload
-      };
+    return  Object.assign({}, state, { loading:false,data:action.payload });
   }
 }
  

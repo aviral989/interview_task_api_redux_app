@@ -23,7 +23,6 @@ export function getDataRequest() {
          dispatch(getDataRequest())
         axios.get('https://api.coincap.io/v2/assets')
         .then(response => {
-            console.log('coinData',response.data.data)
             const coinData = response.data.data
             dispatch(getDataSuccess(coinData))
         })
